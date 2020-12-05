@@ -17,3 +17,5 @@ This project requires a few dependencies be install in order to compile it:
 4. `$ cd` into `builddir`
 5. `$ meson compile`
 6. Launch the app: `$ ./brightness_controller`
+
+_You will need to run the binary as `root` because it needs to write to the `/sys/backlight/` file._
