@@ -14,7 +14,7 @@ int Brightness::set_current_value(int value)
  if (value >= this->max_value)
    return this->max_value;
 
- std::fstream sys_brightness_file(intel_current_value_path, std::ios_base::out);
+ std::fstream sys_brightness_file(this->intel_current_value_path, std::ios_base::out);
 
  sys_brightness_file << value << std::endl;
 
@@ -27,7 +27,7 @@ int Brightness::set_current_value(int value)
 
 int Brightness::get_current_value()
 {
-	std::fstream sys_brightness_file(intel_current_value_path, std::ios_base::in);
+	std::fstream sys_brightness_file(this->intel_current_value_path, std::ios_base::in);
 
 	std::string b_value;
 
