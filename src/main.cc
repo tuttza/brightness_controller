@@ -1,4 +1,5 @@
-#include <gtkmm.h>
+#include <gtkmm/application.h>
+#include <gtkmm/window.h>
 #include <iostream>
 #include "brightness.h"
 #include "slider.h"

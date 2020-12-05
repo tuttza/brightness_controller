@@ -8,8 +8,7 @@ Slider::Slider(double low_value, double max_value)
 
   signal_value_changed()
   .connect(
-    sigc::bind<-1, 
-    Glib::ustring>(sigc::mem_fun(*this, &Slider::value_updated), "value_changed")
+    sigc::bind<-1, Glib::ustring>(sigc::mem_fun(*this, &Slider::value_updated), "value_changed")
   );
 }
 
