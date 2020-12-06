@@ -1,6 +1,6 @@
 #include <gtkmm/application.h>
 #include <gtkmm/window.h>
-#include <iostream>
+#include <memory>
 #include "brightness.h"
 #include "slider.h"
 
@@ -17,7 +17,9 @@ int main(int argc, char *argv[])
  double d_max_value = static_cast<double>(brightness.max_value);
  double d_current_value = static_cast<double>(brightness.current_value);
 
- Slider *slider = new Slider(d_current_value, d_max_value);
+ std::unique_ptr<Slider> slider(new Slider(d_current_value, d_max_value));
+
+ //Slider *slider = new Slider(d_current_value, d_max_value);
  slider->set_draw_value();
 
  window.set_default_size(200, 400);
