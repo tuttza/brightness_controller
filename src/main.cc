@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
  double d_max_value = static_cast<double>(brightness.max_value);
  double d_current_value = static_cast<double>(brightness.current_value);
 
- std::unique_ptr<Slider> slider(new Slider(d_current_value, d_max_value));
+ Slider *slider = Gtk::manage( new Slider(d_current_value, d_max_value) );
  slider->set_draw_value();
 
  Gtk::Window window;
  window.set_default_size(200, 400);
- window.add(*slider);
+ window.add( *slider );
  window.show_all_children();
 
  return app->run(window);
